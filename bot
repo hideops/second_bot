@@ -1,0 +1,42 @@
+import random
+
+def gen_pass(pass_length):
+    elements = "+-/*!&$#?=@<>"
+    password = ""
+
+    for i in range(pass_length):
+        password += random.choice(elements)
+
+
+    return password
+
+def choto():
+    smail=['\U0001f600','\U0001f642','\U0001F606','']
+    emoji = random.choice(smail)
+    return emoji
+def privet(otvet):
+    privetstvie=['привет','privet']
+    return random.choice(privetstvie)
+
+def cflculator_2chisla(n, m, znak):
+    mnozhestvo_znakov = ['+', '-', '*', '/', '//', '**']
+    if znak in mnozhestvo_znakov:
+        answer = (n + znak + m)
+    return eval(answer)
+
+def raschet_silu_toka(u,r):
+    return u/r
+def ya_hochy_igry():
+    return 'Есть набор из 10 натуральных чисел от 1 до 10. Три из этих чисел являются "красными".\n Тебе необходимо выбрать 3 числа, не являющихся красными. Если выберешь "красное" число - ты проиграл.\n Для запуска игра вызови функцию game(), а в аргументах укажи 3 выбранных числа.'
+def game(x,y,z):
+    chisla=[1,2,3,4,5,6,7,8,9,10]
+    red=[]
+    for i in range(3):
+        a=random.choice(chisla)
+        red.append(a)
+        chisla.remove(a)
+    if x in red or y in red or z in red:
+        return f'Вы проиграли, красными числами были {red}'
+    else:
+        return f'Вы выиграли, красными числами были {red}'
+print(game(1,2,3))
